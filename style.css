@@ -493,3 +493,11 @@ summary):active{cursor:var(--cur-pd)!important}
 .isl-ig:hover{transform:rotate(-8deg) scale(1.12)}
 footer .ig{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:800;text-decoration:none;transition:color .2s,transform .3s var(--spring)}
 footer .ig:hover{color:#FF6B9A;transform:translateY(-2px)}
+
+/* ===== v17: pencil line under the title bar ===== */
+.mq.mq-top{overflow:visible;border-bottom:0}
+.mq-clip{overflow:hidden}
+.pencil{position:absolute;left:0;bottom:-9px;width:100%;height:18px;overflow:visible;pointer-events:none;z-index:3}
+.pencil path{fill:none;stroke:var(--ink);stroke-linecap:round;stroke-linejoin:round}
+.pencil .pc-a{stroke-width:3}.pencil .pc-b{stroke-width:1.3;opacity:.45}
+.sbar{bottom:-2px;height:3px;z-index:2}
