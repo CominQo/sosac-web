@@ -10,44 +10,39 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<i class="blob b-a"></i><i class="blob b-b"></i><i class="blob b-c"></i>
 
-<div class="nav"><div class="nav-in">
-  <a class="brand" href="#top"><img src="assets/mini.png" alt=""><span>Sosáč</span></a>
-  <span class="nav-sp"></span>
-  <a class="lnk" href="#features" data-i18n="nav_features">Features</a>
-  <a class="lnk" href="#demo" data-i18n="nav_demo">Demos</a>
-  <a class="lnk" href="#about" data-i18n="nav_about">About</a>
-  <a class="lnk" href="#download" data-i18n="nav_download">Download</a>
+<header class="tb"><div class="tb-in">
+  <a class="brand" href="#top"><img src="assets/mini.png" alt=""><span class="rl-name" aria-label="Sosáč"><span>S</span><span>O</span><span>S</span><span>Á</span><span>Č</span></span></a>
+  <span class="tb-sp"></span>
+  <a class="tbb" href="#download" title="Download"><i style="--c:#9B8CFF"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></i></a>
+  <a class="tbb" href="#demo" title="Demo"><i style="--c:#FF9A2E"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.6 0 2-1.2 1.4-2.2-.6-1 0-2.3 1.6-2.3h2a3 3 0 0 0 3-3C20 7 16.5 3 12 3z"/></svg></i></a>
+  <a class="tbb" href="#about" title="About"><i style="--c:#FFC53D"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></i></a>
   <div class="langw">
-    <button class="btn sm ghost" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" title="Language">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
-      <span id="langLb">EN</span>
-    </button>
-    <div class="langm" id="langMenu" hidden>
-      <button type="button" data-lang="en">English</button>
-      <button type="button" data-lang="sk">Slovenčina</button>
-      <button type="button" data-lang="cs">Čeština</button>
-    </div>
+    <button class="tbb pill" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" title="Language"><i style="--c:#36D6C3"><svg viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg></i><b id="langLb">SK</b></button>
+    <div class="langm" id="langMenu" hidden><button type="button" data-lang="en">English</button><button type="button" data-lang="sk">Slovenčina</button><button type="button" data-lang="cs">Čeština</button></div>
   </div>
-  <button class="btn sm pri" id="navAcc" type="button" data-i18n="login">Log in</button>
-</div></div>
+  <span class="sbar" id="sbar"></span>
+</div></header>
 
 <main id="top" class="wrap">
   <div class="hero2">
     <span class="pill" data-i18n="pill">Sosáč 3.0 · for Windows</span>
     <h1 class="mega" data-toc-title="Sosáč" aria-label="Sosáč">
-      <span class="L" aria-hidden="true">S</span><span class="L o" id="bigO" aria-hidden="true">O<i class="eye"></i><i class="eye"></i></span><span class="L" aria-hidden="true">S</span><span class="L" aria-hidden="true">Á</span><span class="L" aria-hidden="true">Č</span>
+      <span style="--k:0" class="L" aria-hidden="true">S</span><span style="--k:1" class="L o" id="bigO" aria-hidden="true">O<i class="eye"></i><i class="eye"></i></span><span style="--k:2" class="L" aria-hidden="true">S</span><span style="--k:3" class="L" aria-hidden="true">Á</span><span style="--k:4" class="L" aria-hidden="true">Č</span>
     </h1>
     <div class="hero-row">
       <div class="mc-box" id="mcHost"></div>
       <div class="hero-bot">
         <p class="lead" data-i18n="lead"></p>
-        <button class="btn lg pink buy" id="buyBtn" type="button" data-i18n="b_btn">Buy for €10</button>
+        <a class="btn lg pink buy" id="buyBtn" href="https://revolut.me/kubo_comor" target="_blank" rel="noopener" data-i18n="b_btn">Buy for €10</a>
         <small class="cta-note" data-i18n="cta_note"></small>
         <div class="msg" id="buyMsg"></div>
       </div>
     </div>
   </div>
+
+  <div class="mq" aria-hidden="true"><div class="mq-t"><span>DOWNLOAD ✦ SOSOGRAM ✦ SOSIFY ✦ MP3 ✦ GIF ✦ EDITOR ✦ CHANNELS ✦ </span><span>DOWNLOAD ✦ SOSOGRAM ✦ SOSIFY ✦ MP3 ✦ GIF ✦ EDITOR ✦ CHANNELS ✦ </span></div></div>
 
   <section id="features">
     <h2 class="sec-h" data-i18n="f_h">What Sosáč can do</h2>
@@ -103,12 +98,8 @@
 
 <footer><div class="wrap">Sosáč © <span id="yr"></span> · <span data-i18n="foot">Made with love and a hose</span></div></footer>
 
-<div class="ov" id="ov" role="dialog" aria-modal="true">
-  <div class="modal" id="modal"></div>
-</div>
 <div class="toast" id="toast"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
 <script src="config.js"></script>
 <script src="i18n.js"></script>
 <script src="i18n-extra.js"></script>

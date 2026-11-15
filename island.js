@@ -16,7 +16,7 @@
         '<svg class="isl-pr" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round">' +
         '<circle class="trk" cx="12" cy="12" r="' + ((24 - 2.5) / 2) + '"/>' +
         '<circle class="bar" cx="12" cy="12" r="' + ((24 - 2.5) / 2) + '" stroke-dasharray="' + CIRC + '" stroke-dashoffset="' + CIRC + '"/></svg></div>' +
-      '<div class="isl-menu"><div class="isl-head"><b id="islH"></b><button type="button" class="isl-x" aria-label="Close">✕</button></div><div class="isl-list" data-lenis-prevent="true"></div><div class="isl-ft"><div class="isl-lg"><button type="button" data-lang="en">EN</button><button type="button" data-lang="sk">SK</button><button type="button" data-lang="cs">CS</button></div><button type="button" class="btn sm pri" id="islAcc"></button></div></div>' +
+      '<div class="isl-menu"><div class="isl-head"><b id="islH"></b><button type="button" class="isl-x" aria-label="Close">✕</button></div><div class="isl-list" data-lenis-prevent="true"></div><div class="isl-ft"><div class="isl-lg"><button type="button" data-lang="en">EN</button><button type="button" data-lang="sk">SK</button><button type="button" data-lang="cs">CS</button></div></div></div>' +
     '</div>';
   var back = document.createElement("div");
 back.className = "isl-back";
