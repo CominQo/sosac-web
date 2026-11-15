@@ -25,6 +25,7 @@ var q=Math.min(1,z*2.4),R=Math.min(vw*.46,640);cs.forEach(function(c){var a=c.ge
 function lzq(){if(!tk)tk=requestAnimationFrame(lzu)}
 addEventListener("scroll",lzq,{passive:true});addEventListener("resize",lzq);lzu();
 new IntersectionObserver(function(es){var on=es[0].isIntersecting;if(on){if(!lv.src)lv.src=lv.getAttribute("data-src");if(!rm)lv.play().catch(function(){})}else lv.pause()},{threshold:0}).observe(lz)}
+document.addEventListener("mousedown",function(){document.documentElement.classList.add("cur-d")},true);addEventListener("mouseup",function(){document.documentElement.classList.remove("cur-d")});addEventListener("blur",function(){document.documentElement.classList.remove("cur-d")});
 if(rm)return;
 /* reveal on scroll */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.classList.add("done");t.style.transitionDelay=""},900)}})},{threshold:.12});

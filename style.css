@@ -385,3 +385,59 @@ html,body{overflow-x:clip}
 .plate:hover::before{box-shadow:7px 12px 0 var(--ink)}
 .buy-plate{font:800 clamp(22px,2.6vw,34px)/1 var(--font);text-transform:uppercase;letter-spacing:.01em;gap:18px;padding:12px 52px 12px 18px;min-width:min(430px,88vw)}
 .buy-plate img{width:66px;height:66px}
+
+
+/* ===== v14: banner-like plate, app cursor + scrollbar ===== */
+.plate::before,#features .sec-h::before,#demo .sec-h::before{background:repeating-linear-gradient(135deg,#FFC93F 0 15px,#F4B93A 15px 30px);border:3px solid #1A1530;border-radius:11px 14px 10px 13px;box-shadow:2px 6px 0 #1A1530,4px 12px 0 #2A2147}
+.plate:hover::before{box-shadow:2px 7px 0 #1A1530,4px 15px 0 #2A2147}
+.buy-plate{font:800 clamp(24px,3vw,38px)/1 var(--font);padding:16px 58px 16px 20px;min-width:min(520px,92vw);gap:20px}
+.buy-plate img{width:78px;height:78px;margin:-6px 0}
+:root{--cur-a:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20transform%3D'translate(0%200)'%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(2.6%202.6)'%20fill%3D'%23000'%20fill-opacity%3D'.28'%20stroke%3D'%23000'%20stroke-opacity%3D'.28'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20fill%3D'%23ffe2a0'%20stroke%3D'%231A1530'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(13.3%2014.3)%20scale(.58)%20translate(-13.3%20-14.3)'%20fill%3D'none'%20stroke%3D'%23987637'%20stroke-opacity%3D'.55'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M8.8%208.5%20L11.2%2019.5'%20stroke%3D'%23fff'%20stroke-opacity%3D'.7'%20stroke-width%3D'1.6'%20stroke-linecap%3D'round'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 4, default;--cur-ad:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20transform%3D'translate(1%201)'%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(2.6%202.6)'%20fill%3D'%23000'%20fill-opacity%3D'.28'%20stroke%3D'%23000'%20stroke-opacity%3D'.28'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20fill%3D'%23e4b03b'%20stroke%3D'%231A1530'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(13.3%2014.3)%20scale(.58)%20translate(-13.3%20-14.3)'%20fill%3D'none'%20stroke%3D'%23987637'%20stroke-opacity%3D'.55'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M8.8%208.5%20L11.2%2019.5'%20stroke%3D'%23fff'%20stroke-opacity%3D'.7'%20stroke-width%3D'1.6'%20stroke-linecap%3D'round'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 4, default;--cur-p:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20transform%3D'translate(0%200)'%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(2.6%202.6)'%20fill%3D'%23000'%20fill-opacity%3D'.28'%20stroke%3D'%23000'%20stroke-opacity%3D'.28'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20fill%3D'%23FFC53D'%20stroke%3D'%231A1530'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(13.3%2014.3)%20scale(.58)%20translate(-13.3%20-14.3)'%20fill%3D'none'%20stroke%3D'%238c6d36'%20stroke-opacity%3D'.55'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M8.8%208.5%20L11.2%2019.5'%20stroke%3D'%23fff'%20stroke-opacity%3D'.7'%20stroke-width%3D'1.6'%20stroke-linecap%3D'round'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 4, pointer;--cur-pd:url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20width%3D'32'%20height%3D'32'%20viewBox%3D'0%200%2032%2032'%3E%3Cg%20transform%3D'translate(1%201)'%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(2.6%202.6)'%20fill%3D'%23000'%20fill-opacity%3D'.28'%20stroke%3D'%23000'%20stroke-opacity%3D'.28'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20fill%3D'%23ba9039'%20stroke%3D'%231A1530'%20stroke-width%3D'3.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M5%204%20L10%2025%20L25%2014%20Z'%20transform%3D'translate(13.3%2014.3)%20scale(.58)%20translate(-13.3%20-14.3)'%20fill%3D'none'%20stroke%3D'%23765b35'%20stroke-opacity%3D'.55'%20stroke-width%3D'2.4'%20stroke-linejoin%3D'round'%2F%3E%3Cpath%20d%3D'M8.8%208.5%20L11.2%2019.5'%20stroke%3D'%23fff'%20stroke-opacity%3D'.7'%20stroke-width%3D'1.6'%20stroke-linecap%3D'round'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") 5 4, pointer}
+html{cursor:var(--cur-a)}html.cur-d{cursor:var(--cur-ad)}
+.isl,
+.isl-it,
+.isl-lg button,
+.isl-x,
+.langm button,
+.lb button,
+.mega .L,
+.plate,
+.tabs button,
+.tbb,
+.vf,
+.vframe,
+.vt,
+.x,
+[role=button],
+a,
+button,
+label,
+select,
+summary{cursor:var(--cur-p)!important}
+:is(.isl,
+.isl-it,
+.isl-lg button,
+.isl-x,
+.langm button,
+.lb button,
+.mega .L,
+.plate,
+.tabs button,
+.tbb,
+.vf,
+.vframe,
+.vt,
+.x,
+[role=button],
+a,
+button,
+label,
+select,
+summary):active{cursor:var(--cur-pd)!important}
+::-webkit-scrollbar{width:16px;height:16px}
+::-webkit-scrollbar-corner{background:transparent}
+::-webkit-scrollbar-track{background:var(--surface-2);background-clip:padding-box;border:4px solid transparent;border-radius:99px}
+::-webkit-scrollbar-thumb{min-height:48px;min-width:48px;border:3px solid transparent;border-radius:99px;background-color:var(--surface-3);background-clip:padding-box;background-image:repeating-linear-gradient(135deg,transparent 0 5px,rgba(26,21,48,.16) 5px 8px);box-shadow:inset 0 0 0 2px var(--ink);transition:background-color .25s}
+::-webkit-scrollbar-thumb:hover{background-color:var(--yellow);border-width:2px}
+::-webkit-scrollbar-thumb:active{background-color:var(--pink);border-width:1px}
+@supports not selector(::-webkit-scrollbar){html{scrollbar-color:var(--surface-3) var(--surface-2)}}
