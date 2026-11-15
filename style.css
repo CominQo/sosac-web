@@ -441,3 +441,46 @@ summary):active{cursor:var(--cur-pd)!important}
 ::-webkit-scrollbar-thumb:hover{background-color:var(--yellow);border-width:2px}
 ::-webkit-scrollbar-thumb:active{background-color:var(--pink);border-width:1px}
 @supports not selector(::-webkit-scrollbar){html{scrollbar-color:var(--surface-3) var(--surface-2)}}
+
+/* ===== v15: SVG banners, Sosáč silhouette reveal, motion everywhere ===== */
+.plate::before,#features .sec-h::before,#demo .sec-h::before{display:none}
+.bnr{position:relative;isolation:isolate;background:none!important;border:0!important;box-shadow:none!important}
+.bn-svg{position:absolute;left:0;top:0;z-index:-1;overflow:visible;pointer-events:none;transform-origin:50% 50%;animation:bnSway 6s ease-in-out infinite}
+@keyframes bnSway{50%{transform:rotate(.35deg) translateY(-1px)}}
+.plate:hover{transform:translate(-2px,-4px) rotate(-.6deg)}
+.buy-plate img,.cta-bnr img{animation:bob2 2.6s ease-in-out infinite}
+@keyframes bob2{50%{transform:translateY(-5px) rotate(-4deg)}}
+.cta{display:flex;justify-content:center;padding:46px 0 20px}
+.cta-bnr{display:flex;align-items:center;gap:22px;width:min(1180px,calc(100vw - 48px));padding:20px 34px 20px 26px;text-decoration:none;color:var(--ink)}
+.cta-bnr img{width:clamp(64px,9vw,110px);height:auto;flex:none}
+.cta-bnr b{font:800 clamp(24px,5.2vw,68px)/1 var(--font);letter-spacing:.01em}
+.cta-bnr small{margin-left:auto;align-self:flex-end;font:500 clamp(13px,1.7vw,22px) var(--font);margin-bottom:6px;text-align:right}
+@media(max-width:620px){.cta-bnr small{display:none}.cta-bnr{padding:14px 18px}}
+/* Sosáč silhouette as the video window */
+.lipz-st{width:min(620px,84vw);aspect-ratio:1290/1184;transform-origin:44.88% 57.18%;transform:translate(-44.88%,-57.18%)}
+.lipz-st>div{-webkit-mask:none;mask:none;position:absolute;inset:0}
+.lipz-bg{background:url(assets/sosac-bg.svg?v=15) center/100% 100% no-repeat}
+.lipz-st>.lipz-v{-webkit-mask:url(assets/sosac-mask.svg?v=15) center/100% 100% no-repeat;mask:url(assets/sosac-mask.svg?v=15) center/100% 100% no-repeat;background:var(--ink)}
+/* floating icons */
+.fis{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.fi{position:absolute;width:var(--w);height:var(--w);opacity:.5}
+.fi svg{display:block;width:100%;height:100%;animation:fiF var(--d) ease-in-out infinite alternate}
+@keyframes fiF{from{transform:translateY(-12px) rotate(-9deg)}to{transform:translateY(14px) rotate(10deg)}}
+/* card icon loops */
+.f6 .card.cat .hico svg{transform-origin:50% 50%}
+.f6 .card.cat:nth-child(1) .hico svg{animation:icoDl 1.8s ease-in-out infinite}
+.f6 .card.cat:nth-child(2) .hico svg{animation:icoPu 2.2s ease-in-out infinite}
+.f6 .card.cat:nth-child(3) .hico svg{animation:icoPu 2.7s ease-in-out infinite}
+.f6 .card.cat:nth-child(4) .hico svg{animation:icoSw 1.7s ease-in-out infinite}
+.f6 .card.cat:nth-child(5) .hico svg{animation:icoSn 1.5s ease-in-out infinite}
+.f6 .card.cat:nth-child(6) .hico svg{animation:icoSp 5s linear infinite}
+@keyframes icoDl{50%{transform:translateY(3px)}}@keyframes icoPu{50%{transform:scale(1.16)}}@keyframes icoSw{0%,100%{transform:rotate(-12deg)}50%{transform:rotate(12deg)}}
+@keyframes icoSn{0%,60%,100%{transform:rotate(0)}25%{transform:rotate(-16deg)}42%{transform:rotate(12deg)}}@keyframes icoSp{to{transform:rotate(360deg)}}
+/* more motion */
+.hw-chips em{animation:chipF 3.2s ease-in-out infinite}.hw-chips em:nth-child(2){animation-delay:-.8s}.hw-chips em:nth-child(3){animation-delay:-1.6s}.hw-chips em:nth-child(4){animation-delay:-2.4s}
+@keyframes chipF{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-7px) rotate(3deg)}}
+.vt.on .vn{animation:vnp 1.6s ease-in-out infinite}@keyframes vnp{50%{transform:scale(1.2)}}
+#features .sec-h::after,#demo .sec-h::after{content:"✦";position:absolute;right:-16px;top:-18px;font-size:34px;line-height:1;color:#FF6B9A;-webkit-text-stroke:1.5px var(--ink);animation:tw 2s ease-in-out infinite}
+@keyframes tw{0%,100%{transform:scale(.7) rotate(0);opacity:.7}50%{transform:scale(1.25) rotate(25deg);opacity:1}}
+.pill{animation:bob2 3.4s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.bn-svg,.fi svg,.f6 .card.cat .hico svg,.hw-chips em,.buy-plate img,.cta-bnr img,.vt .vn,.pill{animation:none!important}}

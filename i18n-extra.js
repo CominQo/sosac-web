@@ -9,3 +9,5 @@ en:{lz_t:"Sucks up everything.",hw_tag:"FOR WINDOWS",v1_d:"Your start screen: qu
 sk:{lz_t:"Nasaje všetko.",hw_tag:"PRE WINDOWS",v1_d:"Úvodná obrazovka: rýchle akcie a všetko na prvý pohľad.",v2_d:"Vlož odkaz, vyber kvalitu a Sosáč nasaje video alebo hudbu.",v3_d:"Profily a príbehy na jednom mieste, prehľadne a rýchlo.",v4_d:"Hudba z YouTube a SoundCloudu s obľúbenými a prehrávačom.",v5_d:"Strih, text a prechody, export jedným klikom."},
 cs:{lz_t:"Nasaje všechno.",hw_tag:"PRO WINDOWS",v1_d:"Úvodní obrazovka: rychlé akce a vše na první pohled.",v2_d:"Vlož odkaz, vyber kvalitu a Sosáč nasaje video nebo hudbu.",v3_d:"Profily a příběhy na jednom místě, přehledně a rychle.",v4_d:"Hudba z YouTube a SoundCloudu s oblíbenými a přehrávačem.",v5_d:"Střih, text a přechody, export jedním kliknutím."}};
 for(var l in X)window.I18N.add(l,X[l]);})();
+
+(function(){var X={en:{cta_made:"Made in Slovakia"},sk:{cta_made:"Vyrobené na Slovensku"},cs:{cta_made:"Vyrobeno na Slovensku"}};for(var l in X)window.I18N.add(l,X[l]);})();
