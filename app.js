@@ -4,9 +4,9 @@
   $("#yr").textContent = new Date().getFullYear();
   function toast(m) { var e = $("#toast"); e.textContent = m; e.classList.add("on"); clearTimeout(toast._t); toast._t = setTimeout(function () { e.classList.remove("on"); }, 3200); }
   try { if (!localStorage.getItem("sosac_lang")) { var n = (navigator.language || "").slice(0, 2); if (n === "sk" || n === "cs") window.I18N.set(n); } } catch (e) {}
-  function closeLang() { $("#langMenu").hidden = true; $("#langBtn").setAttribute("aria-expanded", "false"); }
-  $("#langBtn").addEventListener("click", function (e) { e.stopPropagation(); var m = $("#langMenu"); m.hidden = !m.hidden; this.setAttribute("aria-expanded", String(!m.hidden)); });
-  $("#langMenu").addEventListener("click", function (e) { var b = e.target.closest("[data-lang]"); if (b) { window.I18N.set(b.getAttribute("data-lang")); closeLang(); } });
+  function closeLang() { var m = $("#langMenu"), b = $("#langBtn"); if (m) m.hidden = true; if (b) b.setAttribute("aria-expanded", "false"); }
+  var LB=$("#langBtn");if(LB)LB.addEventListener("click", function (e) { e.stopPropagation(); var m = $("#langMenu"); m.hidden = !m.hidden; this.setAttribute("aria-expanded", String(!m.hidden)); });
+  var LM=$("#langMenu");if(LM)LM.addEventListener("click", function (e) { var b = e.target.closest("[data-lang]"); if (b) { window.I18N.set(b.getAttribute("data-lang")); closeLang(); } });
   document.addEventListener("click", function (e) { if (!e.target.closest(".langw")) closeLang(); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLang(); });
   function owned() { try { return localStorage.getItem(KEY) === "1"; } catch (e) { return false; } }
