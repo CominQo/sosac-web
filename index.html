@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sosáč – sucks up everything</title>
+<meta name="description" content="Sosáč: download videos, music, whole channels, GIFs and MP3s. Editor, converter and more in one app.">
+<link rel="icon" href="assets/mini.png">
+<link rel="stylesheet" href="mascot/mascot.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="nav"><div class="nav-in">
+  <a class="brand" href="#top"><img src="assets/mini.png" alt=""><span>Sosáč</span></a>
+  <span class="nav-sp"></span>
+  <a class="lnk" href="#features" data-i18n="nav_features">Features</a>
+  <a class="lnk" href="#demo" data-i18n="nav_demo">Demos</a>
+  <a class="lnk" href="#about" data-i18n="nav_about">About</a>
+  <a class="lnk" href="#download" data-i18n="nav_download">Download</a>
+  <div class="langw">
+    <button class="btn sm ghost" id="langBtn" type="button" aria-haspopup="true" aria-expanded="false" title="Language">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+      <span id="langLb">EN</span>
+    </button>
+    <div class="langm" id="langMenu" hidden>
+      <button type="button" data-lang="en">English</button>
+      <button type="button" data-lang="sk">Slovenčina</button>
+      <button type="button" data-lang="cs">Čeština</button>
+    </div>
+  </div>
+  <button class="btn sm pri" id="navAcc" type="button" data-i18n="login">Log in</button>
+</div></div>
+
+<main id="top" class="wrap">
+  <div class="hero2">
+    <span class="pill" data-i18n="pill">Sosáč 3.0 · for Windows</span>
+    <h1 class="mega" data-toc-title="Sosáč" aria-label="Sosáč">
+      <span class="L" aria-hidden="true">S</span><span class="L o" id="bigO" aria-hidden="true">O<i class="eye"></i><i class="eye"></i></span><span class="L" aria-hidden="true">S</span><span class="L" aria-hidden="true">Á</span><span class="L" aria-hidden="true">Č</span>
+    </h1>
+    <div class="hero-row">
+      <div class="mc-box" id="mcHost"></div>
+      <div class="hero-bot">
+        <p class="lead" data-i18n="lead"></p>
+        <button class="btn lg pink buy" id="buyBtn" type="button" data-i18n="b_btn">Buy for €10</button>
+        <small class="cta-note" data-i18n="cta_note"></small>
+        <div class="msg" id="buyMsg"></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="features">
+    <h2 class="sec-h" data-i18n="f_h">What Sosáč can do</h2>
+    <p class="sec-s" data-i18n="f_s"></p>
+    <div class="grid">
+      <div class="card"><div class="ic" style="background:var(--yellow)">⬇️</div><h3 data-i18n="f1_t"></h3><p data-i18n="f1_d"></p></div>
+      <div class="card"><div class="ic" style="background:var(--blue)">📺</div><h3 data-i18n="f2_t"></h3><p data-i18n="f2_d"></p></div>
+      <div class="card"><div class="ic" style="background:var(--pink)">📸</div><h3 data-i18n="f3_t"></h3><p data-i18n="f3_d"></p></div>
+      <div class="card"><div class="ic" style="background:var(--violet)">🎵</div><h3 data-i18n="f4_t"></h3><p data-i18n="f4_d"></p></div>
+      <div class="card"><div class="ic" style="background:var(--orange)">✂️</div><h3 data-i18n="f5_t"></h3><p data-i18n="f5_d"></p></div>
+      <div class="card"><div class="ic" style="background:var(--teal)">🔁</div><h3 data-i18n="f6_t"></h3><p data-i18n="f6_d"></p></div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <h2 class="sec-h" data-i18n="dm_h"></h2>
+    <p class="sec-s" data-i18n="dm_s"></p>
+    <div class="grid dm">
+      <div class="card"><div class="win"><i></i><i></i><i></i></div><div class="scr s1"><div class="url"><span>youtube.com/watch?v=sosac</span></div><div class="pb"><b></b></div><div class="chips"><em>▶ MP4</em><em>♪ MP3</em><em>GIF</em></div></div><h3 data-i18n="f1_t"></h3></div>
+      <div class="card"><div class="win"><i></i><i></i><i></i></div><div class="scr s2"><div class="tr"><u style="--w:46%;--c:var(--pink)"></u><u style="--w:30%;--c:var(--blue)"></u></div><div class="tr"><u style="--w:22%;--c:var(--yellow)"></u><u style="--w:58%;--c:var(--teal)"></u></div><span class="ph"></span><span class="sc">✂</span></div><h3 data-i18n="f5_t"></h3></div>
+      <div class="card"><div class="win"><i></i><i></i><i></i></div><div class="scr s3"><div class="cv"><em>MP4</em><b>→</b><em class="x1">GIF</em><em class="x2">MP3</em></div><div class="q"><i></i><i></i><i></i><i></i></div></div><h3 data-i18n="f6_t"></h3></div>
+      <div class="card"><div class="win"><i></i><i></i><i></i></div><div class="scr s4"><div class="eq"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pb"><b></b></div></div><h3 data-i18n="f4_t"></h3></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="sec-h" data-i18n="ab_h"></h2>
+    <div class="about">
+      <div class="ab-ban"><i class="b1"></i><i class="b2"></i><span class="ab-ver">Sosáč 3.0</span><img src="mascot/mascot.png" alt=""></div>
+      <div class="ab-bd">
+        <div class="ab-who"><h3>Jakub</h3><span class="ab-nick">CominQo / designer</span></div>
+        <p class="ab-role" data-i18n="ab_role"></p>
+        <div class="ab-mail"><div><small data-i18n="ab_q"></small><b id="abMail">comor.design@gmail.com</b></div><button class="btn sm" id="abCp" type="button" data-i18n="ab_cp"></button></div>
+        <h4 data-i18n="ab_hw"></h4>
+        <div class="hw"><span></span><b class="hh" data-i18n="ab_min"></b><b class="hh" data-i18n="ab_rec"></b>
+          <small data-i18n="ab_sys"></small><span>Windows 10 (64-bit)</span><span>Windows 11</span>
+          <small data-i18n="ab_cpu"></small><span data-i18n="ab_c4"></span><span data-i18n="ab_c8"></span>
+          <small>RAM</small><span>4 GB</span><span>16 GB</span>
+          <small data-i18n="ab_gpu"></small><span data-i18n="ab_g1"></span><span data-i18n="ab_g2"></span>
+          <small>Disk</small><span>2 GB</span><span>SSD, 10 GB</span></div>
+        <p class="hw-n" data-i18n="ab_note"></p>
+        <div class="ab-sup"><div><b data-i18n="ab_sh"></b><p data-i18n="ab_sp"></p></div><a class="btn pink" href="https://revolut.me/kubo_comor" target="_blank" rel="noopener" data-i18n="ab_go"></a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <h2 class="sec-h center" data-i18n="d_h">Download</h2>
+    <p class="sec-s center" data-i18n="d_s"></p>
+    <div class="card dl" id="dlCard"></div>
+  </section>
+</main>
+
+<footer><div class="wrap">Sosáč © <span id="yr"></span> · <span data-i18n="foot">Made with love and a hose</span></div></footer>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true">
+  <div class="modal" id="modal"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="config.js"></script>
+<script src="i18n.js"></script>
+<script src="i18n-extra.js"></script>
+<script src="app.js"></script>
+<script src="island.js"></script>
+<script src="mascot/mascot.js"></script>
+<script src="hero.js"></script>
+</body>
+</html>
