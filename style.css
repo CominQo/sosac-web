@@ -286,3 +286,15 @@ html{scroll-padding-top:56px}.toast{top:64px}
 .card.cat p{margin:0;color:var(--ink);opacity:.72;font-weight:700;font-size:15px}
 .card.cat .hico{position:absolute;right:18px;top:18px;width:54px;height:54px;display:grid;place-items:center;background:color-mix(in srgb,#fff 70%,var(--ac));border:2.5px solid var(--ink);border-radius:14px 5px 14px 5px;box-shadow:2px 2px 0 var(--ink);transition:transform .35s var(--spring)}
 .card.cat:hover{transform:translate(-2px,-5px);box-shadow:7px 9px 0 var(--ink)}.card.cat:hover .hico{transform:rotate(-10deg) scale(1.1)}
+
+/* ===== v6: endless marquee, 6 cards in one row ===== */
+.mq-t{will-change:transform}
+.grid.f6{grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;width:min(1320px,calc(100vw - 32px));position:relative;left:50%;transform:translateX(-50%);margin-top:24px}
+#features .sec-h,#features .sec-s{text-align:center;margin-left:auto;margin-right:auto}
+.f6 .card.cat{min-height:210px;padding:16px;justify-content:flex-start}
+.f6 .card.cat .hico{position:static;align-self:flex-end;margin-bottom:auto;width:46px;height:46px}
+.f6 .card.cat .hico svg{width:23px;height:23px}
+.f6 .card.cat h3{font-size:20px;line-height:1.15;margin-top:14px;overflow-wrap:anywhere}
+.f6 .card.cat p{font-size:13.5px;line-height:1.35}
+@media(max-width:1100px){.grid.f6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:640px){.grid.f6{grid-template-columns:repeat(2,minmax(0,1fr))}}
