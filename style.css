@@ -347,3 +347,15 @@ html,body{overflow-x:clip}
 .hw-card{padding:24px;background:var(--surface);border:3px solid var(--ink);border-radius:22px 8px 22px 8px;box-shadow:5px 6px 0 var(--ink)}
 .hw-card .hw{font-size:15px;gap:10px 12px;grid-template-columns:84px 1fr 1fr}.hw-card .hw-n{margin:16px 0 0}
 @media(max-width:900px){.hwbox{grid-template-columns:1fr;padding:26px 20px}}
+
+/* ===== v9: HW without white rectangle, bigger text ===== */
+.hwbox{grid-template-columns:1fr 1.25fr}
+.hw-card{padding:0;background:none;border:0;box-shadow:none;border-radius:0}
+.hw-card .hw{font-size:clamp(17px,1.9vw,24px);gap:16px 18px;grid-template-columns:minmax(86px,.55fr) 1fr 1fr;font-weight:800;color:var(--ink)}
+.hw-card .hw small{font-size:.72em;font-weight:900;color:var(--ink);opacity:.7;text-transform:uppercase;letter-spacing:.05em}
+.hw-card .hh{font-size:clamp(14px,1.4vw,18px);padding:6px 10px;border-width:2.5px;box-shadow:2px 3px 0 var(--ink)}
+.hw-card .hw-n{margin:26px 0 0;font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--ink);opacity:.8;line-height:1.5}
+
+/* ===== v9b fixes ===== */
+.vt .vn{position:static;left:auto;top:auto}
+@media(max-width:900px){.hwbox{grid-template-columns:1fr}.hw-card .hw{font-size:15px;gap:12px;grid-template-columns:minmax(70px,.7fr) 1fr 1fr}.hw-card .hw-n{font-size:15px}}
