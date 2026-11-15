@@ -6,8 +6,8 @@
 <title>Sosáč – sucks up everything</title>
 <meta name="description" content="Sosáč: download videos, music, whole channels, GIFs and MP3s. Editor, converter and more in one app.">
 <link rel="icon" href="assets/mini.png">
-<link rel="stylesheet" href="mascot/mascot.css?v=7">
-<link rel="stylesheet" href="style.css?v=7">
+<link rel="stylesheet" href="mascot/mascot.css?v=8">
+<link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 <i class="blob b-a"></i><i class="blob b-b"></i><i class="blob b-c"></i>
@@ -31,6 +31,13 @@
     </div>
   </div>
 
+  <section class="lipz" id="lips">
+    <div class="lipz-in">
+      <h2 class="lipz-t" data-i18n="lz_t"></h2>
+      <div class="lipz-st"><div class="lipz-g"></div><div class="lipz-o"></div><div class="lipz-v"><video muted loop playsinline preload="metadata" poster="assets/vid/1.jpg" data-src="assets/vid/1.mp4"></video></div></div>
+    </div>
+  </section>
+
   <section id="features">
     <h2 class="sec-h" data-i18n="f_h">What Sosáč can do</h2>
     <p class="sec-s" data-i18n="f_s"></p>
@@ -47,18 +54,22 @@
   <section id="demo">
     <h2 class="sec-h" data-i18n="dm_h"></h2>
     <p class="sec-s" data-i18n="dm_s"></p>
-    <div class="vids"><figure class="vid" style="--ac:#FFC53D"><div class="vf"><video muted loop playsinline preload="none" poster="assets/vid/1.jpg" data-src="assets/vid/1.mp4"></video><span class="vn">1</span></div><figcaption><h3>Home</h3><p data-i18n="v1_d"></p></figcaption></figure><figure class="vid" style="--ac:#4DB8FF"><div class="vf"><video muted loop playsinline preload="none" poster="assets/vid/2.jpg" data-src="assets/vid/2.mp4"></video><span class="vn">2</span></div><figcaption><h3>Downloader</h3><p data-i18n="v2_d"></p></figcaption></figure><figure class="vid" style="--ac:#FF6B9A"><div class="vf"><video muted loop playsinline preload="none" poster="assets/vid/3.jpg" data-src="assets/vid/3.mp4"></video><span class="vn">3</span></div><figcaption><h3>Sosogram</h3><p data-i18n="v3_d"></p></figcaption></figure><figure class="vid" style="--ac:#9B8CFF"><div class="vf"><video muted loop playsinline preload="none" poster="assets/vid/4.jpg" data-src="assets/vid/4.mp4"></video><span class="vn">4</span></div><figcaption><h3>Sosify</h3><p data-i18n="v4_d"></p></figcaption></figure><figure class="vid" style="--ac:#FF9A2E"><div class="vf"><video muted loop playsinline preload="none" poster="assets/vid/5.jpg" data-src="assets/vid/5.mp4"></video><span class="vn">5</span></div><figcaption><h3>Editor</h3><p data-i18n="v5_d"></p></figcaption></figure></div>
+    <div class="vstage">
+      <div class="vframe" id="vframe"><div class="vwin"><i></i><i></i><i></i><b id="vtitle">Home</b><em id="vnum">1 / 5</em></div><video id="vmain" muted playsinline preload="metadata" poster="assets/vid/1.jpg"></video></div>
+      <div class="vtabs"><button type="button" class="vt" data-i="0" style="--ac:#FFC53D"><span class="vn">1</span><h3>Home</h3><p data-i18n="v1_d"></p><u></u></button><button type="button" class="vt" data-i="1" style="--ac:#4DB8FF"><span class="vn">2</span><h3>Downloader</h3><p data-i18n="v2_d"></p><u></u></button><button type="button" class="vt" data-i="2" style="--ac:#FF6B9A"><span class="vn">3</span><h3>Sosogram</h3><p data-i18n="v3_d"></p><u></u></button><button type="button" class="vt" data-i="3" style="--ac:#9B8CFF"><span class="vn">4</span><h3>Sosify</h3><p data-i18n="v4_d"></p><u></u></button><button type="button" class="vt" data-i="4" style="--ac:#FF9A2E"><span class="vn">5</span><h3>Editor</h3><p data-i18n="v5_d"></p><u></u></button></div>
+    </div>
   </section>
 
-  <section id="about">
-    <h2 class="sec-h" data-i18n="ab_h"></h2>
-    <div class="about">
-      <div class="ab-ban"><i class="b1"></i><i class="b2"></i><span class="ab-ver">Sosáč 3.0</span><img src="mascot/mascot.png" alt=""></div>
-      <div class="ab-bd">
-        <div class="ab-who"><h3>Jakub</h3><span class="ab-nick">CominQo / designer</span></div>
-        <p class="ab-role" data-i18n="ab_role"></p>
-        <div class="ab-mail"><div><small data-i18n="ab_q"></small><b id="abMail">comor.design@gmail.com</b></div><button class="btn sm" id="abCp" type="button" data-i18n="ab_cp"></button></div>
-        <h4 data-i18n="ab_hw"></h4>
+  <section id="hw">
+    <div class="hwbox">
+      <div class="hw-l">
+        <span class="hw-tag" data-i18n="hw_tag"></span>
+        <h2 class="hw-t" data-toc-title="HW"><span>SOSÁČ</span> <b>HW</b></h2>
+        <p class="hw-s" data-i18n="ab_hw"></p>
+        <div class="hw-chips"><em style="--c:#FF9A2E">MP4</em><em style="--c:#6EE05A">MP3</em><em style="--c:#4DB8FF">4K</em><em style="--c:#9B8CFF">HD</em></div>
+        <img class="hw-mas" src="mascot/mascot.png" alt="">
+      </div>
+      <div class="hw-card">
         <div class="hw"><span></span><b class="hh" data-i18n="ab_min"></b><b class="hh" data-i18n="ab_rec"></b>
           <small data-i18n="ab_sys"></small><span>Windows 10 (64-bit)</span><span>Windows 11</span>
           <small data-i18n="ab_cpu"></small><span data-i18n="ab_c4"></span><span data-i18n="ab_c8"></span>
@@ -66,15 +77,8 @@
           <small data-i18n="ab_gpu"></small><span data-i18n="ab_g1"></span><span data-i18n="ab_g2"></span>
           <small>Disk</small><span>2 GB</span><span>SSD, 10 GB</span></div>
         <p class="hw-n" data-i18n="ab_note"></p>
-        <div class="ab-sup"><div><b data-i18n="ab_sh"></b><p data-i18n="ab_sp"></p></div><a class="btn pink" href="https://revolut.me/kubo_comor" target="_blank" rel="noopener" data-i18n="ab_go"></a></div>
       </div>
     </div>
-  </section>
-
-  <section id="download">
-    <h2 class="sec-h center" data-i18n="d_h">Download</h2>
-    <p class="sec-s center" data-i18n="d_s"></p>
-    <div class="card dl" id="dlCard"></div>
   </section>
 </main>
 
@@ -82,12 +86,12 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="config.js?v=7"></script>
-<script src="i18n.js?v=7"></script>
-<script src="i18n-extra.js?v=7"></script>
-<script src="app.js?v=7"></script>
-<script src="island.js?v=7"></script>
-<script src="mascot/mascot.js?v=7"></script>
-<script src="hero.js?v=7"></script>
+<script src="config.js?v=8"></script>
+<script src="i18n.js?v=8"></script>
+<script src="i18n-extra.js?v=8"></script>
+<script src="app.js?v=8"></script>
+<script src="island.js?v=8"></script>
+<script src="mascot/mascot.js?v=8"></script>
+<script src="hero.js?v=8"></script>
 </body>
 </html>

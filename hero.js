@@ -7,15 +7,25 @@ var cp=$("#abCp");if(cp)cp.onclick=function(){var m=$("#abMail").textContent;(na
 var sb=$("#sbar"),bl=document.querySelectorAll(".blob");
 function sc(){var y=scrollY,m=document.documentElement.scrollHeight-innerHeight;if(sb)sb.style.transform="scaleX("+(m>0?y/m:0)+")";if(!rm)bl.forEach(function(b,i){b.style.transform="translateY("+(y*(.08+i*.05))+"px)"})}
 addEventListener("scroll",sc,{passive:true});sc();
-/* demo videos: lazy, play only in view; click = lightbox */
-var vs=document.querySelectorAll(".vid video");
-var vio=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.src)v.src=v.getAttribute("data-src");if(!rm)v.play().catch(function(){})}else v.pause()})},{threshold:.25});
-vs.forEach(function(v){vio.observe(v);v.parentNode.addEventListener("click",function(){var lb=document.createElement("div");lb.className="lb";lb.innerHTML='<video src="'+v.getAttribute("data-src")+'" muted loop playsinline autoplay controls></video><button type="button" aria-label="Close">✕</button>';lb.onclick=function(e){if(e.target.tagName!=="VIDEO"){lb.remove()}};document.body.appendChild(lb)})});
-document.addEventListener("keydown",function(e){var l=document.querySelector(".lb");if(e.key==="Escape"&&l)l.remove()});
+/* big video stage: playlist, loops through all 5 */
+var VN=["Home","Downloader","Sosogram","Sosify","Editor"],vm=$("#vmain"),tb=document.querySelectorAll(".vt"),cur=0,vis=false;
+function sel(i){cur=i;tb.forEach(function(t,k){t.classList.toggle("on",k===i);t.style.setProperty("--p",0)});$("#vtitle").textContent=VN[i];$("#vnum").textContent=(i+1)+" / 5";vm.poster="assets/vid/"+(i+1)+".jpg";vm.src="assets/vid/"+(i+1)+".mp4";if(vis&&!rm)vm.play().catch(function(){})}
+if(vm){tb.forEach(function(t,k){t.onclick=function(){sel(k);vm.play().catch(function(){})}});
+vm.addEventListener("ended",function(){sel((cur+1)%5)});
+vm.addEventListener("timeupdate",function(){if(vm.duration)tb[cur].style.setProperty("--p",vm.currentTime/vm.duration)});
+$("#vframe").addEventListener("click",function(){var f=$("#vframe");if(document.fullscreenElement)document.exitFullscreen();else if(f.requestFullscreen)f.requestFullscreen()});
+new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!rm)vm.play().catch(function(){});else vm.pause()},{threshold:.3}).observe($("#vframe"));sel(0)}
+/* lips zoom-in reveal (scroll) */
+var lz=$("#lips");
+if(lz){var st=lz.querySelector(".lipz-st"),lv=lz.querySelector("video"),tt=lz.querySelector(".lipz-t"),tk=0;
+function lzu(){tk=0;var r=lz.getBoundingClientRect(),vh=innerHeight,vw=innerWidth,p=rm?0:Math.min(1,Math.max(0,-r.top/(r.height-vh))),W=st.offsetWidth,s1=.5*Math.hypot(vw/194,vh/84)*400/W*1.4,s=Math.pow(s1,Math.pow(p,1.1));st.style.transform="translate(-50%,-50%) scale("+s+")";tt.style.opacity=Math.max(0,1-p*4);tt.style.transform="translateY("+(-p*90)+"px)"}
+function lzq(){if(!tk)tk=requestAnimationFrame(lzu)}
+addEventListener("scroll",lzq,{passive:true});addEventListener("resize",lzq);lzu();
+new IntersectionObserver(function(es){var on=es[0].isIntersecting;if(on){if(!lv.src)lv.src=lv.getAttribute("data-src");if(!rm)lv.play().catch(function(){})}else lv.pause()},{threshold:0}).observe(lz)}
 if(rm)return;
 /* reveal on scroll */
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;t.classList.add("in");io.unobserve(t);setTimeout(function(){t.classList.add("done");t.style.transitionDelay=""},900)}})},{threshold:.12});
-document.querySelectorAll(".sec-h,.sec-s,.card,.about,.vid").forEach(function(e,i){e.classList.add("rv");e.style.transitionDelay=(i%4)*70+"ms";io.observe(e)});
+document.querySelectorAll(".sec-h,.sec-s,.card").forEach(function(e,i){e.classList.add("rv");e.style.transitionDelay=(i%4)*70+"ms";io.observe(e)});
 /* card tilt */
 document.querySelectorAll(".card").forEach(function(c){c.addEventListener("pointermove",function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform="perspective(700px) rotateX("+(-y*8)+"deg) rotateY("+(x*8)+"deg) translateY(-4px)"});c.addEventListener("pointerleave",function(){c.style.transform=""})});
 /* sparkle trail */
