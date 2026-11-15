@@ -484,3 +484,12 @@ summary):active{cursor:var(--cur-pd)!important}
 @keyframes tw{0%,100%{transform:scale(.7) rotate(0);opacity:.7}50%{transform:scale(1.25) rotate(25deg);opacity:1}}
 .pill{animation:bob2 3.4s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.bn-svg,.fi svg,.f6 .card.cat .hico svg,.hw-chips em,.buy-plate img,.cta-bnr img,.vt .vn,.pill{animation:none!important}}
+
+/* ===== v16: slower marquee, no balls, smoother zoom, instagram ===== */
+.mq-t{animation-duration:85s}
+.blob{display:none!important}
+.lipz-in{height:100vh;height:100svh}
+.isl-ig{display:grid;place-items:center;flex:none;width:34px;height:34px;border:2px solid var(--ink);border-radius:10px;background:#FF6B9A;color:var(--ink);transition:transform .3s var(--spring)}
+.isl-ig:hover{transform:rotate(-8deg) scale(1.12)}
+footer .ig{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:800;text-decoration:none;transition:color .2s,transform .3s var(--spring)}
+footer .ig:hover{color:#FF6B9A;transform:translateY(-2px)}

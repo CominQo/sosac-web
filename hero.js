@@ -15,16 +15,20 @@ vm.addEventListener("ended",function(){sel((cur+1)%5)});
 vm.addEventListener("timeupdate",function(){if(vm.duration)tb[cur].style.setProperty("--p",vm.currentTime/vm.duration)});
 $("#vframe").addEventListener("click",function(){var f=$("#vframe");if(document.fullscreenElement)document.exitFullscreen();else if(f.requestFullscreen)f.requestFullscreen()});
 new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis&&!rm)vm.play().catch(function(){});else vm.pause()},{threshold:.3}).observe($("#vframe"));sel(0)}
-/* lips zoom-in reveal (scroll) */
+/* Sosáč silhouette zoom reveal: smoothed (lerp) + eased, metrics cached */
 var lz=$("#lips");
-if(lz){var st=lz.querySelector(".lipz-st"),lv=lz.querySelector("video"),tt=lz.querySelector(".lipz-t"),tk=0,lin=lz.querySelector(".lipz-in"),cs=[].slice.call(lz.querySelectorAll(".lipz-chips em"));
-function lzu(){tk=0;var r=lz.getBoundingClientRect(),vh=innerHeight,vw=innerWidth,p=rm?0:Math.min(1,Math.max(0,-r.top/(r.height-vh))),z=Math.min(1,p/.7),W=st.offsetWidth,s1=Math.hypot(vw/2,vh*.58)/(+st.getAttribute("data-r")*W)*1.05,s=Math.pow(s1,Math.pow(z,1.1));
-st.style.transform="translate(-"+(+st.getAttribute("data-cx")*100)+"%,-"+(+st.getAttribute("data-cy")*100)+"%) scale("+s+")";tt.style.opacity=Math.max(0,1-z*4);tt.style.transform="translateY("+(-z*90)+"px)";
-lin.style.opacity=1-Math.min(1,Math.max(0,(p-.9)/.1));
-var q=Math.min(1,z*2.4),R=Math.min(vw*.46,640);cs.forEach(function(c){var a=c.getAttribute("data-a")*Math.PI/180,rr=+c.getAttribute("data-r")*R*(1-q);c.style.transform="translate(-50%,-50%) translate("+Math.cos(a)*rr+"px,"+Math.sin(a)*rr*.62+"px) rotate("+(q*220)+"deg) scale("+(1-q*.85)+")";c.style.opacity=1-q*q*q})}
-function lzq(){if(!tk)tk=requestAnimationFrame(lzu)}
-addEventListener("scroll",lzq,{passive:true});addEventListener("resize",lzq);lzu();
-new IntersectionObserver(function(es){var on=es[0].isIntersecting;if(on){if(!lv.src)lv.src=lv.getAttribute("data-src");if(!rm)lv.play().catch(function(){})}else lv.pause()},{threshold:0}).observe(lz)}
+if(lz){var st=lz.querySelector(".lipz-st"),lv=lz.querySelector("video"),tt=lz.querySelector(".lipz-t"),lin=lz.querySelector(".lipz-in"),cs=[].slice.call(lz.querySelectorAll(".lipz-chips em")),cxp=+st.getAttribute("data-cx"),cyp=+st.getAttribute("data-cy"),rr=+st.getAttribute("data-r"),M={},lc=0,lt=0,raf=0;
+function meas(){M.h=lz.offsetHeight;M.vh=lin.offsetHeight||innerHeight;M.vw=innerWidth;M.W=st.offsetWidth;M.s1=Math.hypot(M.vw/2,M.vh*.58)/(rr*M.W)*1.05;M.R=Math.min(M.vw*.46,640)}
+function ez(t){return .5-.5*Math.cos(Math.PI*t)}
+function draw(p){var z=Math.min(1,p/.7),s=Math.pow(M.s1,ez(z));st.style.transform="translate(-"+cxp*100+"%,-"+cyp*100+"%) scale("+s+")";tt.style.opacity=Math.max(0,1-z*3.5);tt.style.transform="translateY("+(-z*90)+"px)";lin.style.opacity=1-ez(Math.min(1,Math.max(0,(p-.82)/.18)));var q=ez(Math.min(1,z*2.2));cs.forEach(function(c){var a=c.getAttribute("data-a")*Math.PI/180,r=+c.getAttribute("data-r")*M.R*(1-q);c.style.transform="translate(-50%,-50%) translate("+Math.cos(a)*r+"px,"+Math.sin(a)*r*.62+"px) rotate("+(q*220)+"deg) scale("+(1-q*.85)+")";c.style.opacity=1-q*q*q})}
+function want(){return rm?0:Math.min(1,Math.max(0,-lz.getBoundingClientRect().top/Math.max(1,M.h-M.vh)))}
+function loop(){raf=0;var d=lt-lc;if(Math.abs(d)<.0005){lc=lt;draw(lc);return}lc+=d*.16;draw(lc);raf=requestAnimationFrame(loop)}
+function kick(){lt=want();if(!raf)raf=requestAnimationFrame(loop)}
+addEventListener("scroll",kick,{passive:true});addEventListener("resize",function(){meas();kick()});addEventListener("load",function(){meas();kick()});
+meas();lc=lt=want();draw(lc);
+function vload(){if(!lv.src){lv.preload="auto";lv.src=lv.getAttribute("data-src")}}
+if(document.readyState==="complete")setTimeout(vload,300);else addEventListener("load",function(){setTimeout(vload,300)});
+new IntersectionObserver(function(es){var on=es[0].isIntersecting;if(on){vload();if(!rm)lv.play().catch(function(){})}else lv.pause()},{threshold:0}).observe(lz)}
 document.addEventListener("mousedown",function(){document.documentElement.classList.add("cur-d")},true);addEventListener("mouseup",function(){document.documentElement.classList.remove("cur-d")});addEventListener("blur",function(){document.documentElement.classList.remove("cur-d")});
 if(rm)return;
 /* reveal on scroll */
