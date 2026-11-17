@@ -532,3 +532,11 @@ footer .dc svg{width:18px;height:18px}footer .dc:hover{color:#5865F2}
 footer .dc svg{width:18px;height:18px}footer .dc:hover{color:#5865F2}
 .cta-br{flex-basis:100%;height:0}
 .hero-bot{z-index:4}
+
+/* ===== v22: Gmail (red), compact secondary buttons ===== */
+.ig-plate,.dc-plate,.ml-plate{font-size:clamp(17px,1.65vw,22px);padding:13px 22px 13px 16px;gap:10px}
+.ig-plate .ig-ico,.dc-ico,.ml-ico{width:28px;height:28px}
+.ml-plate{display:inline-flex;align-items:center;margin:0;font-family:var(--font);font-weight:800;line-height:1;color:#fff;text-decoration:none;text-shadow:0 2px 0 rgba(26,21,48,.45)}
+.ml-ico{flex:none;animation:bob2 3.1s ease-in-out infinite}
+.isl-ml{background:#EA4335;color:#fff}.isl-ml svg{width:20px;height:20px}
+footer .ml svg{width:18px;height:18px}footer .ml:hover{color:#EA4335}
