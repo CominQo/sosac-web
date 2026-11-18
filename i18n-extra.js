@@ -13,3 +13,5 @@ for(var l in X)window.I18N.add(l,X[l]);})();
 (function(){var X={en:{cta_made:"Made in Slovakia"},sk:{cta_made:"Vyrobené na Slovensku"},cs:{cta_made:"Vyrobeno na Slovensku"}};for(var l in X)window.I18N.add(l,X[l]);})();
 
 (function(){var X={en:{don_btn:"Donate",soc_l:"Join us"},sk:{don_btn:"Podporiť",soc_l:"Pridaj sa k nám"},cs:{don_btn:"Podpořit",soc_l:"Přidej se k nám"}};for(var l in X)window.I18N.add(l,X[l]);})();
+
+(function(){var X={en:{cta_h:"Ready to suck up everything?"},sk:{cta_h:"Pripravený nasať všetko?"},cs:{cta_h:"Připraven nasát všechno?"}};for(var l in X)window.I18N.add(l,X[l]);})();
