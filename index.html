@@ -6,8 +6,8 @@
 <title>Sosáč – sucks up everything</title>
 <meta name="description" content="Sosáč: download videos, music, whole channels, GIFs and MP3s. Editor, converter and more in one app.">
 <link rel="icon" href="assets/mini.png">
-<link rel="stylesheet" href="mascot/mascot.css?v=24">
-<link rel="stylesheet" href="style.css?v=24">
+<link rel="stylesheet" href="mascot/mascot.css?v=25">
+<link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="rough" x="-5%" y="-20%" width="112%" height="150%"><feTurbulence type="fractalNoise" baseFrequency="0.012 0.02" numOctaves="1" seed="6" result="a"/><feDisplacementMap in="SourceGraphic" in2="a" scale="4.5" xChannelSelector="R" yChannelSelector="G"/></filter></svg>
@@ -53,6 +53,7 @@
       <div class="card cat" style="--ac:var(--orange)"><span class="hico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.8"/><circle cx="6" cy="18" r="2.8"/><path d="M8.3 7.6L20 18M8.3 16.4L20 6"/></svg></span><h3 data-i18n="f5_t"></h3><p data-i18n="f5_d"></p></div>
       <div class="card cat" style="--ac:var(--teal)"><span class="hico"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1A1530" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a8 8 0 0 1 14-4l2 2M20 13a8 8 0 0 1-14 4l-2-2M20 5v4h-4M4 19v-4h4"/></svg></span><h3 data-i18n="f6_t"></h3><p data-i18n="f6_d"></p></div>
     </div>
+      <div class="try-row"><a class="plate" data-bn="#FF9A2E,#F08A20" href="#editor"><span data-i18n="ed_try"></span></a></div>
   </section>
 
   <div class="pn-div" aria-hidden="true"><svg class="pencil" preserveAspectRatio="none"><path class="pc-b"/><path class="pc-a"/></svg></div>
@@ -67,8 +68,62 @@
   </section>
 
   <div class="pn-div" aria-hidden="true"><svg class="pencil" preserveAspectRatio="none"><path class="pc-b"/><path class="pc-a"/></svg></div>
-  <section id="hw">
+  <section id="editor">
     <span class="sh-n">03</span>
+    <h2 class="sec-h" data-i18n="ed_h">Editor</h2>
+    <p class="sec-s" data-i18n="ed_sub"></p>
+    <section class="ed-drop" id="edDrop">
+    <img src="assets/mini.png" alt="">
+    <h2 data-i18n="ed_drop"></h2>
+    <p data-i18n="ed_priv"></p>
+    <div class="ed-row"><label class="ed-btn" for="edFile"><span data-i18n="ed_pick"></span></label><button class="ed-btn ghost" id="edSample" type="button"><span data-i18n="ed_sample"></span></button></div>
+    <input id="edFile" type="file" accept="video/*" hidden>
+    <p class="ed-err" id="edErr" role="alert"></p>
+  </section>
+
+  <section class="ed-work" id="edWork">
+    <div class="ed-stage">
+      <div class="ed-frame"><div class="ed-bar"><i></i><i></i><i></i><b id="edName">video</b><em id="edInfo"></em></div><canvas id="edCv" width="720" height="1280"></canvas></div>
+      <div class="ed-play"><button class="ed-btn" id="edPlay" type="button"><span id="edPlayL" data-i18n="ed_play"></span></button><button class="ed-btn ghost" id="edReset" type="button"><span data-i18n="ed_again"></span></button></div>
+      <p class="ed-note" data-i18n="ed_limit"></p>
+    </div>
+    <aside class="ed-panel">
+      <div class="ed-card"><h3><i>1</i><span data-i18n="ed_fmt"></span></h3>
+        <div class="seg" id="edRatio"><button type="button" data-r="orig" class="on"><span data-i18n="ed_orig"></span></button><button type="button" data-r="9:16">9:16<small data-i18n="ed_r916"></small></button><button type="button" data-r="1:1">1:1<small data-i18n="ed_r11"></small></button><button type="button" data-r="4:5">4:5<small data-i18n="ed_r45"></small></button><button type="button" data-r="16:9">16:9<small data-i18n="ed_r169"></small></button></div>
+        <div class="ed-sub" data-i18n="ed_fit"></div>
+        <div class="seg" id="edFit"><button type="button" data-f="crop" class="on"><span data-i18n="ed_crop"></span></button><button type="button" data-f="fit"><span data-i18n="ed_fitv"></span></button><button type="button" data-f="blur"><span data-i18n="ed_blur"></span></button></div>
+        <div class="fr" id="edFocusRow"><span data-i18n="ed_focus"></span><input id="edFocus" type="range" min="0" max="100" value="50"><b id="edFocusV">50%</b></div>
+      </div>
+      <div class="ed-card"><h3><i>2</i><span data-i18n="ed_trim"></span></h3>
+        <div class="fr"><span data-i18n="ed_start"></span><input id="edStart" type="range" min="0" max="10" step="0.1" value="0"><b id="edStartV">0:00.0</b></div>
+        <div class="fr"><span data-i18n="ed_end"></span><input id="edEnd" type="range" min="0" max="10" step="0.1" value="10"><b id="edEndV">0:10.0</b></div>
+      </div>
+      <div class="ed-card"><h3><i>3</i><span data-i18n="ed_text"></span></h3>
+        <textarea id="edText" rows="2" maxlength="120"></textarea>
+        <div class="fr"><span data-i18n="ed_size"></span><input id="edSize" type="range" min="4" max="18" step="0.5" value="9"><b id="edSizeV">9%</b></div>
+        <div class="ed-sub" data-i18n="ed_color"></div>
+        <div class="sw" id="edColor"><button type="button" data-c="#ffffff" class="on" style="background:#fff" aria-label="white"></button><button type="button" data-c="#FFC53D" style="background:#FFC53D" aria-label="yellow"></button><button type="button" data-c="#FF6B9A" style="background:#FF6B9A" aria-label="pink"></button><button type="button" data-c="#4DB8FF" style="background:#4DB8FF" aria-label="blue"></button><button type="button" data-c="#1A1530" style="background:#1A1530" aria-label="ink"></button></div>
+        <div class="ed-sub" data-i18n="ed_pos"></div>
+        <div class="seg" id="edPos"><button type="button" data-p="top"><span data-i18n="ed_top"></span></button><button type="button" data-p="mid"><span data-i18n="ed_mid"></span></button><button type="button" data-p="bot" class="on"><span data-i18n="ed_bot"></span></button></div>
+        <div class="ed-sub" data-i18n="ed_anim"></div>
+        <div class="seg" id="edAnim"><button type="button" data-a="none" class="on"><span data-i18n="ed_none"></span></button><button type="button" data-a="fade"><span data-i18n="ed_fade"></span></button><button type="button" data-a="up"><span data-i18n="ed_up"></span></button></div>
+      </div>
+      <div class="ed-card"><h3><i>4</i><span data-i18n="ed_sound"></span></h3>
+        <div class="fr"><span data-i18n="ed_vol"></span><input id="edVol" type="range" min="0" max="150" value="100"><b id="edVolV">100%</b></div>
+        <label class="ed-ck"><input id="edMute" type="checkbox"><span data-i18n="ed_mute"></span></label>
+        <div class="fr"><span data-i18n="ed_fin"></span><input id="edFin" type="range" min="0" max="5" step="0.1" value="0"><b id="edFinV">0s</b></div>
+        <div class="fr"><span data-i18n="ed_fout"></span><input id="edFout" type="range" min="0" max="5" step="0.1" value="0"><b id="edFoutV">0s</b></div>
+      </div>
+      <button class="ed-btn big" id="edExport" type="button"><span data-i18n="ed_export"></span></button>
+      <div class="ed-prog" id="edProg" hidden><div class="ed-pb"><b id="edPb"></b></div><p data-i18n="ed_exporting"></p></div>
+      <div class="ed-result" id="edResult" hidden><div class="ed-ok">✓</div><h3 data-i18n="ed_done"></h3><video id="edOut" controls playsinline></video><p class="ed-note" id="edWebm" data-i18n="ed_webm" hidden></p><a class="ed-btn" id="edDl" download><span data-i18n="ed_dl"></span></a></div>
+    </aside>
+  </section>
+  </section>
+
+  <div class="pn-div" aria-hidden="true"><svg class="pencil" preserveAspectRatio="none"><path class="pc-b"/><path class="pc-a"/></svg></div>
+  <section id="hw">
+    <span class="sh-n">04</span>
     <div class="hwbox">
       <div class="hw-top">
         <div class="hw-l">
@@ -96,7 +151,7 @@
     <svg class="pencil ft-pc" preserveAspectRatio="none" aria-hidden="true"><path class="pc-b"/><path class="pc-a"/></svg>
     <div class="ft-in">
       <div class="ft-brand"><img src="assets/mini.png" alt=""><div><span class="rl-name" aria-label="Sosáč"><span>S</span><span>O</span><span>S</span><span>Á</span><span>Č</span></span><p data-i18n="foot">Made with love and a hose</p></div></div>
-      <nav class="ft-nav"><a href="#features" data-i18n="f_h"></a><a href="#demo" data-i18n="dm_h"></a><a href="#hw" data-i18n="ab_hw"></a></nav>
+      <nav class="ft-nav"><a href="#features" data-i18n="f_h"></a><a href="#demo" data-i18n="dm_h"></a><a href="#hw" data-i18n="ab_hw"></a><a href="#editor" data-i18n="ed_nav"></a></nav>
       <div class="ft-soc"><div class="dock"><a class="dk dk-ig" href="https://www.instagram.com/sosac.app/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg></a><a class="dk dk-dc" href="https://discord.gg/E8NTnHfRht" target="_blank" rel="noopener" aria-label="Discord" title="Discord"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.2 6.6c2-1.3 4-1.8 4-1.8l.6 1.2a14 14 0 0 1 4.4 0l.6-1.2s2 .5 4 1.8c2 3.3 2.9 7 2.6 11-1.8 1.4-3.4 2-3.4 2l-1-1.7c.6-.2 1.1-.5 1.6-.8-2.9 1.4-8.3 1.4-11.2 0 .5.3 1 .6 1.6.8l-1 1.7s-1.6-.6-3.4-2C2.3 13.6 3.2 9.9 5.2 6.6z"/><circle cx="9" cy="13" r="1.4" fill="currentColor"/><circle cx="15" cy="13" r="1.4" fill="currentColor"/></svg></a><a class="dk dk-ml" href="mailto:comor.design@gmail.com" aria-label="Gmail" title="comor.design@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.8 7.6l8.2 6 8.2-6"/></svg></a></div><a class="foot-mail" href="mailto:comor.design@gmail.com">comor.design@gmail.com</a></div>
     </div>
     <div class="ft-bot">Sosáč © <span id="yr"></span></div>
@@ -104,14 +159,15 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="config.js?v=24"></script>
-<script src="i18n.js?v=24"></script>
-<script src="i18n-extra.js?v=24"></script>
-<script src="app.js?v=24"></script>
-<script src="island.js?v=24"></script>
-<script src="mascot/mascot.js?v=24"></script>
-<script src="bn.js?v=24"></script>
-<script src="pencil.js?v=24"></script>
-<script src="hero.js?v=24"></script>
+<script src="config.js?v=25"></script>
+<script src="i18n.js?v=25"></script>
+<script src="i18n-extra.js?v=25"></script>
+<script src="app.js?v=25"></script>
+<script src="island.js?v=25"></script>
+<script src="mascot/mascot.js?v=25"></script>
+<script src="bn.js?v=25"></script>
+<script src="pencil.js?v=25"></script>
+<script src="hero.js?v=25"></script>
+<script src="editor.js?v=25"></script>
 </body>
 </html>

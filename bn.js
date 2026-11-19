@@ -29,7 +29,7 @@ function build(host,idx){
  svg.appendChild(el("path",{d:d1,fill:"url(#"+id+")",stroke:"#1A1530","stroke-width":3,"stroke-linejoin":"round"}));
  svg.appendChild(el("path",{d:d2,fill:"none",stroke:"#1A1530","stroke-width":1.5,"stroke-linejoin":"round",opacity:.75}));
  host.insertBefore(svg,host.firstChild)}
-var hosts=[].slice.call(document.querySelectorAll(".plate,.bnr,#features .sec-h,#demo .sec-h"));
+var hosts=[].slice.call(document.querySelectorAll(".plate,.bnr,#features .sec-h,#demo .sec-h,#editor .sec-h"));
 hosts.forEach(function(h){h.classList.add("bnr")});
 var q=0;function all(){q=0;hosts.forEach(build)}
 function soon(){if(!q)q=requestAnimationFrame(all)}
